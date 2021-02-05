@@ -15,7 +15,7 @@
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [https://github.com/LeulAria/blogtalk/blob/main/LICENSE](LICENSE.md) file for more information.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/LeulAria/blogtalk/blob/main/LICENSE) file for more information.
 ---
 
 Made with ♥ by Leularia
