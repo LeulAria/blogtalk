@@ -9,8 +9,8 @@ class Post(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     tags = models.ManyToManyField("Tag", null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
-    updated_on = models.DateTimeField(auto_now=True)
-    created_on = models.DateTimeField(auto_now_add=False)
+    updated_on = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_on = models.DateTimeField(auto_now_add=False, null=True, blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
@@ -27,3 +27,16 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.tag_name
+
+class Comment(models.Model):
+    post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="auth_comments")
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=False)
+    edited = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f'Comment "{self.body}" By {self.author}'

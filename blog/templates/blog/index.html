@@ -3,10 +3,10 @@
 <!-- Set your background image for this header on the line below. -->
 <header
   class="intro-header"
-  style="background-image: linear-gradient(
-      rgba(0, 0, 0, 0.55), 
-      rgba(0, 0, 0, 0.55)
-    ), url('static/img/home-bg.jpg')"
+  style="
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+      url('static/img/home-bg.jpg');
+  "
 >
   <div class="container">
     <div class="row">
@@ -14,7 +14,10 @@
         <div class="site-heading">
           <h1>Blog Talk</h1>
           <hr class="small" />
-          <span class="subheading">Start sharing your thoughs, your content... </span>
+          <span class="subheading"
+            >“Wise men speak because they have something to say; fools because
+            they have to say something.” – Plato
+          </span>
         </div>
       </div>
     </div>
@@ -22,7 +25,7 @@
 </header>
 
 <!-- Main Content -->
-<div class="container">
+<div class="container" id="posts">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       {% for post in post_list %}
@@ -32,19 +35,33 @@
           <h3 class="post-subtitle">{{post.content|slice:"100"}}</h3>
         </a>
         <p class="post-meta">
-          Posted by <a href="{% url 'blog:post_detail' post.slug %}">{{post.author}}</a> on {{post.created_on}}
+          Posted by
+          <a href="{% url 'blog:post_detail' post.slug %}">{{post.author}}</a>
+          on {{post.created_on}}
         </p>
       </div>
       {% endfor %}
 
       <hr />
 
+      {% if is_paginated %}
       <!-- Pager -->
       <ul class="pager">
-        <li class="next">
-          <a href="#">Older Posts &rarr;</a>
+        {% if page_obj.has_previous %}
+        <li class="previous">
+          <a href="?page={{ page_obj.previous_page_number }}#posts" class="page-link"
+            >&laquo; PREV
+          </a>
         </li>
+        {% endif %} {% if page_obj.has_next %}
+        <li class="next">
+          <a href="?page={{ page_obj.next_page_number }}#posts" class="page-link">
+            NEXT &raquo;</a
+          >
+        </li>
+        {% endif %}
       </ul>
+      {% endif %}
     </div>
   </div>
 </div>
