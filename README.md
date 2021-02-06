@@ -15,33 +15,32 @@
 
 # Getting Started
 ### Clone The Project
-`
+```
 
 $ git clone https://github.com/LeulAria/blogtalk
 $ cd blogtalk
 
-`
+```
 
 ### Install Requirements/Project Dependencys
-`
+```
 
 $ pip3 install -r requirements.txt
-
-`
+```
 
 ### Migrate Models
-`
+```
 
 $ python3 manage.py migrate
 
-`
+```
 
 ## Run Server
-`
+```
 
 $ python3 manage.py runserver
 
-`
+```
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/LeulAria/blogtalk/blob/main/LICENSE) file for more information.
