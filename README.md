@@ -15,7 +15,7 @@
 
 # Getting Started
 ### Clone The Project
-shell`
+`
 
 $ git clone https://github.com/LeulAria/blogtalk
 $ cd blogtalk
@@ -23,21 +23,21 @@ $ cd blogtalk
 `
 
 ### Install Requirements/Project Dependencys
-shell`
+`
 
 $ pip3 install -r requirements.txt
 
 `
 
 ### Migrate Models
-shell`
+`
 
 $ python3 manage.py migrate
 
 `
 
 ## Run Server
-shell`
+`
 
 $ python3 manage.py runserver
 
