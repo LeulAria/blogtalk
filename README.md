@@ -15,24 +15,32 @@
 
 # Getting Started
 ### Clone The Project
-`shell
+shell`
+
 $ git clone https://github.com/LeulAria/blogtalk
 $ cd blogtalk
+
 `
 
 ### Install Requirements/Project Dependencys
-`shell 
+shell`
+
 $ pip3 install -r requirements.txt
+
 `
 
 ### Migrate Models
-`shell
+shell`
+
 $ python3 manage.py migrate
+
 `
 
 ## Run Server
-`shell
+shell`
+
 $ python3 manage.py runserver
+
 `
 ## 📝 License
 
