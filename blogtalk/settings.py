@@ -30,18 +30,28 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+LOCAL_APPS = [
+    'user_profile.apps.UserProfileConfig',
+    'blog.apps.BlogConfig'
+]
+
+THIRD_PARTY_APPS = [
+    'django_summernote'
+]
+
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user_profile.apps.UserProfileConfig',
-    'blog.apps.BlogConfig'
 ]
 
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,10 +63,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'blogtalk.urls'
 
+TEMPLATES_DIR = [BASE_DIR / "templates",]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': TEMPLATES_DIR,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +135,24 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "assets"
 ]
+STATIC_ROOT = BASE_DIR / "static_root"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "uploads"
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+
+if DEBUG:
+    INSTALLED_APPS.insert(0, "whitenoise.runserver_nostatic")
+
+#  Add configuration for static files storage using whitenoise
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+ALLOWED_HOSTS = ['blogtalk-alpha.herokuapp.com']
+
+
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
