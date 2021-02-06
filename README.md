@@ -13,6 +13,27 @@
   <img alt="License" src="https://img.shields.io/github/license/LeulAria/blogtalk?style=for-the-badge&color=B45&labelColor=000">
 </p>
 
+# Getting Started
+### Clone The Project
+`shell
+$ git clone https://github.com/LeulAria/blogtalk
+$ cd blogtalk
+`
+
+### Install Requirements/Project Dependencys
+`shell 
+$ pip3 install -r requirements.txt
+`
+
+### Migrate Models
+`shell
+$ python3 manage.py migrate
+`
+
+## Run Server
+`shell
+$ python3 manage.py runserver
+`
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/LeulAria/blogtalk/blob/main/LICENSE) file for more information.

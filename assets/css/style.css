@@ -1,5 +1,5 @@
 /* * { */
-  /* scroll-behavior: smooth; */
+/* scroll-behavior: smooth; */
 /* } */
 
 .subheading {
@@ -7,52 +7,57 @@
   font-weight: 400 !important;
   font-style: italic;
 }
-
+.seecomments-detail-page {
+  color: #fff !important;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 5px 1rem;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+}
 .go-back-btn {
   margin-top: 10rem !important;
 }
 .comments {
-	padding: 1rem 3rem;
-	background: #eee; 
+  padding: 1rem 3rem;
+  background: #eee;
 }
 .comments > h3 {
-	border-bottom: 2px solid #333;
-	padding: 2rem 1rem
+  border-bottom: 2px solid #333;
+  padding: 2rem 1rem;
 }
 
 .post-comments {
-	margin: 1rem 10%;
-	padding: 1.3rem;
-	width: 80%;
+  margin: 1rem 10%;
+  padding: 1.3rem;
+  width: 80%;
   font-family: "Lora", "Times New Roman", serif;
   font-style: italic;
   color: #333;
-	transition: background cubic-bezier(0.19, 1, 0.22, 1) .4s;
+  transition: background cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
 }
 .post-comments:hover {
-	background-color: #e3e3e3;
+  background-color: #e3e3e3;
 }
-.post-comments  p {
-	margin: -2px;
+.post-comments p {
+  margin: -2px;
 }
 .post-comment-header {
-	align-items: center;
+  align-items: center;
 }
 .post-comment-author {
-	font-size: 1.8rem;
-	font-weight: bolder;
+  font-size: 1.8rem;
+  font-weight: bolder;
 }
 .post-comment-time {
-	font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 .post-comment-body {
-	font-size: 1.6rem;
-	color: #555;
-	margin: 0;
+  font-size: 1.6rem;
+  color: #555;
+  margin: 0;
 }
-
-
-
 
 .user-profile-avatar {
   width: 30px;
